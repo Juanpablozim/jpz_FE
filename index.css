@@ -229,7 +229,6 @@ CORPO
     /* BACK IMG */
     .backImg{
         position: relative;
-
         height: 50vmin;
         overflow: hidden;
     }

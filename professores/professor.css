@@ -1,0 +1,118 @@
+:root {
+    --cor-primaria: #009c94;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: aliceblue;
+    --cor-quarternaria: orange;
+    --cor-quintenaria: gray;
+    --cor-sextenaria: rgb(202, 202, 202);
+}
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+/* IDENTIFICAÇÃO */
+.identificacoes{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top {
+    padding-top: 50px;
+    background-image: radial-gradient( var(--cor-primaria), var(--cor-secundaria) );
+}
+
+.identificacoes a{
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--cor-terciaria);
+}
+
+.identificacoes .foto{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+}
+
+.identificacoes .foto img{
+    object-fit: cover;
+    width: 100%;
+}
+
+.identificacoes .nome {
+    font-family:serif;
+    text-align: center;
+    font-size: 5vw;
+    padding-bottom: 20px;
+}
+
+.identificacoes .bio {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.5vw;
+    color: var(--cor-quintenaria);
+    width: 80%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cor-quintenaria);
+}
+
+/* MATERIAS */
+.materias {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.materias h1{
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.materias p {
+    margin-bottom: 20px;
+}
+
+/* ATRIBUICOES */
+
+div.atribuicao {
+    width: 45%;
+    display: inline-block;
+    margin: 20px;
+}
+
+div.atribuicao h1 {
+    font-size: 2vw;
+}
+
+.container {
+    height: 5px;
+    background-color: var(--cor-sextenaria);
+    position: relative;
+}
+
+.container .ensino{
+   position: absolute;
+   height: 100%;
+   width: 76%;
+   background-color: var(--cor-primaria);
+}
+
+.container .dominio{
+   position: absolute;
+   height: 100%;
+   width: 98%;
+   background-color: var(--cor-primaria);
+}
