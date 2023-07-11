@@ -1,0 +1,126 @@
+:root {
+    --cor-primaria: #009c94;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: aliceblue;
+    --cor-quarternaria: orange;
+    --cor-quintenaria: gray;
+}
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+}
+
+a:hover{
+    color: var(--cor-quarternaria);
+}
+
+/* 
+--------------------------------------------------------------------- 
+CABEÇALHO
+--------------------------------------------------------------------- 
+*/
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar{
+    background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 999;
+}
+
+.divisor{
+    padding-top: 70px;
+}
+
+.navbar .logo{
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.toggle_btn {
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.login{
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login:hover{
+    background-color: transparent;
+    color: var(--cor-quarternaria);
+}
+
+.login:active{
+    border: var(--cor-terciaria) 3px solid;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quarternaria);
+}
+
+/* MENU DROPDOWN */
+.dropdown_menu {
+    height: 0px;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background: rgba( 255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dorpdown_menu .login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

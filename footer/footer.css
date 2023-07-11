@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    display: flex;
+}
+
+footer > div {
+    flex: 1;
+}
+
+footer div{
+    text-align: center;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 576px) {
+    footer {
+        display: inline;
+    }
+
+    div{
+        margin-bottom: 30px;
+    }
+}
