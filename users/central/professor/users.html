@@ -9,12 +9,13 @@
     <title>Document</title>
 </head>
 
-<body>
+<body onload="UserLogado()">
     <div class="identificacoes">
         <div class="top">
             <!-- cabeçalho -->
             <header class="navbar">
                 <div class="logo">Find Educators</div>
+                <div class="whitebold">Professor</div>
                 <ul class="links">
                     <li><a href="../../../index.html">Home</a></li>
                     <li><a href="../../../pesquisa/pesquisa.html">Pesquisar</a></li>
@@ -28,15 +29,28 @@
                 </div>
             </header>
             <div class="divisor"></div>
-            <div class="foto">
-                <img src="../imgs/thisisengineering-raeng-TXxiFuQLBKQ-unsplash_cut.jpg" alt="">
+
+            <div class="usuario">
+                <div class="foto">
+                    <i class="fa-solid fa-user userAvatar"></i>
+                </div>
+                <div id="name" class="name">Username</div>
+                <div id="email" class="email">email@mail.domain</div>
             </div>
-            <div class="nome">Alice Sccotling</div>
-        </div>
-        <div class="bio">
-            Ministra aulas particulares desde seus 16 anos. Formada em pedagogia pela UFMG, sempre levou a excelência de ensino como sua principal máxima.
+
+            <div class="logoff">
+                <button class="btnlogoff" id="btnlogoff">FAZER LOGOFF</button>
+            </div>
+
         </div>
     </div>
+    <div class="bio">
+        Ministra aulas particulares desde seus 16 anos. Formada em pedagogia pela UFMG, sempre levou a excelência de
+        ensino como sua principal máxima.
+    </div>
+    </div>
+
+    <button class="btnlogoff" id="btnlogoff">FAZER LOGOFF</button>
 
     <div class="materias">
         <h1>Matérias lecionadas:</h1>

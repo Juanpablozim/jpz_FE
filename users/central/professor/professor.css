@@ -33,6 +33,11 @@ a:hover{
 CABEÇALHO
 --------------------------------------------------------------------- 
 */
+.whitebold {
+    color: aliceblue;
+    font-weight: bold;
+}
+
 header{
     position: relative;
     padding: 0 2rem;
@@ -139,41 +144,73 @@ header{
     justify-content: center;
 }
 
-/* IDENTIFICAÇÃO */
-.identificacoes{
-    margin-left: auto;
-    margin-right: auto;
+/*
+    USUARIO
+*/
+.identificacoes {
+    background-image: radial-gradient(var(--cor-primaria), var(--cor-secundaria));
 }
 
-.top {
-    background-image: radial-gradient( var(--cor-primaria), var(--cor-secundaria) );
+.foto {
+    text-align: center;
 }
 
-.identificacoes a{
-    margin-left: auto;
-    margin-right: auto;
-    color: var(--cor-terciaria);
-}
-
-.identificacoes .foto{
-    margin-left: auto;
-    margin-right: auto;
+.userAvatar {
+    width: 20vmin;
+    height: 20vmin;
+    padding: 5vmin;
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    overflow: hidden;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    font-size: 12vmin;
 }
 
-.identificacoes .foto img{
-    object-fit: cover;
-    width: 100%;
-}
-
-.identificacoes .nome {
-    font-family:serif;
+.name {
+    color: var(--cor-sextinaria);
+    font-family: serif;
     text-align: center;
     font-size: 5vw;
     padding-bottom: 20px;
+}
+
+.email {
+    color: var(--cor-terciaria);
+    margin-top: 5px;
+    font-size: 5vmin;
+    text-align: center;
+}
+
+/*
+LOGOFF
+*/
+.logoff {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.btnlogoff {
+    margin-bottom: 20px;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnlogoff:hover {
+    background-color: transparent;
+    color: var(--cor-quarternaria);
+}
+
+.btnlogoff:active {
+    border: var(--cor-terciaria) 3px solid;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quarternaria);
 }
 
 .identificacoes .bio {

@@ -12,7 +12,8 @@ function leDados() {
     else {
         objDados = {
             usuarios: [
-                { email: "gabriel@gmail.com", nome: "Gabriel", sobrenome: "Quaresma", senha: "Gabriel10" }
+                { id: 1, email: "gabriel@gmail.com", nome: "Gabriel", sobrenome: "Quaresma", senha: "Gabriel10" },
+                { id: 2, email: "address@email.domain", nome: "Óscar", sobrenome: "da Silva Oliveira", senha: "Senha123" }
             ]
         }
     }
@@ -38,24 +39,24 @@ function logar(userid) {
 function validate() {
     let strDados = localStorage.getItem(lastLogin);
     let objDados = {};
-  
-    if (strDados) {
-      objDados = JSON.parse(strDados);
-      if (objDados.login[0].tipo == 1) {
-  
-        if ((Date.now() - objDados.login[0].horario) < 1800000) {
-          return true;
-        } else {
-          return false;
-        }
-      } else {
-        return false;
-      }
-    }
-  }
 
-function logado () {
-    if (validate()){
+    if (strDados) {
+        objDados = JSON.parse(strDados);
+        if (objDados.login[0].tipo === 1) {
+
+            if ((Date.now() - objDados.login[0].horario) < 1800000) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+}
+
+function logado() {
+    if (validate()) {
         window.location = loginstr;
     }
 }
