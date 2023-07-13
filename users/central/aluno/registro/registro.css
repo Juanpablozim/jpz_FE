@@ -173,6 +173,11 @@ input[type="submit"]:hover {
     .Titulo {
         font-size: 80px;
     }
+
+    .professor {
+        display: block;
+        margin-top: 40px;
+    }
 }
 
 @media screen and (min-width: 360px) and (max-width: 600px) {
@@ -196,6 +201,11 @@ input[type="submit"]:hover {
         flex: 1 1 100%;
         position: relative;
     }
+
+    .professor {
+        display: block;
+        margin-top: 40px;
+    }
 }
 
 @media screen and (max-width: 359px) {
@@ -218,5 +228,10 @@ input[type="submit"]:hover {
     .half-box {
         flex: 1 1 100%;
         position: relative;
+    }
+
+    .professor {
+        display: block;
+        margin-top: 40px;
     }
 }

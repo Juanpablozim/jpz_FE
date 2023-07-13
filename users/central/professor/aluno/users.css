@@ -1,0 +1,416 @@
+:root {
+    --cor-primaria: #009c94;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: aliceblue;
+    --cor-quarternaria: orange;
+    --cor-quintenaria: gray;
+    --cor-sextinaria: black;
+    --cor-septagenaria: rgb(218, 218, 218);
+    --cor-octagenaria: #ebf4f5;
+}
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    font-size: 1rem;
+}
+
+a:hover {
+    color: var(--cor-quarternaria);
+}
+
+/* 
+--------------------------------------------------------------------- 
+CABEÇALHO
+--------------------------------------------------------------------- 
+*/
+.active {
+    color: var(--cor-quarternaria);
+}
+
+.identificacoes {
+    background-image: radial-gradient(var(--cor-primaria), var(--cor-secundaria));
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 999;
+}
+
+.divisor {
+    padding-top: 70px;
+}
+
+.navbar .logo {
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.toggle_btn {
+    color: var(--cor-terciaria);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.login {
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login:hover {
+    background-color: transparent;
+    color: var(--cor-quarternaria);
+}
+
+.login:active {
+    border: var(--cor-terciaria) 3px solid;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quarternaria);
+}
+
+/* MENU DROPDOWN */
+.dropdown_menu {
+    height: 0px;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open {
+    height: 240px;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dorpdown_menu .login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*
+    USUARIO
+*/
+
+.foto {
+    text-align: center;
+}
+
+.userAvatar {
+    width: 20vmin;
+    height: 20vmin;
+    padding: 5vmin;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    font-size: 12vmin;
+}
+
+.name {
+    color: var(--cor-sextinaria);
+    font-family: serif;
+    text-align: center;
+    font-size: 5vw;
+    padding-bottom: 20px;
+}
+
+.email {
+    color: var(--cor-terciaria);
+    margin-top: 5px;
+    font-size: 5vmin;
+    text-align: center;
+}
+
+/*
+LOGOFF
+*/
+.logoff {
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.btnlogoff {
+    margin-bottom: 20px;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnlogoff:hover {
+    background-color: transparent;
+    color: var(--cor-quarternaria);
+}
+
+.btnlogoff:active {
+    border: var(--cor-terciaria) 3px solid;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quarternaria);
+}
+
+/*
+---------------------------------------------------------------------
+    CORPO
+---------------------------------------------------------------------
+*/
+.centralizar{
+    text-align: center;
+}
+
+.btn{
+    margin-bottom: 20px;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: var(--cor-secundaria) 3px solid;
+    background-color: transparent;
+    color: var(--cor-secundaria);
+}
+
+.btn:active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-quarternaria);
+}
+
+.corpo {
+    color: var(--cor-sextinaria);
+    margin: 20px;
+}
+
+.corpo .dificuldades .dificuldade {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    border: 1px solid var(--cor-secundaria);
+}
+
+/* NOTAS */
+.notas {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid var(--cor-secundaria);
+}
+
+.notamateria {
+    border-radius: 20px;
+    margin: 1%;
+    padding: 1%;
+    background-color: var(--cor-octagenaria);
+    width: 30%;
+    display: inline-block;
+}
+
+.anomateria {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.materia {
+    font-weight: bold;
+    float: left;
+}
+
+.nota {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    float: right;
+}
+
+.barra-progresso {
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--cor-secundaria);
+}
+
+.base-barra-progresso {
+    margin-top: 20px;
+    background-color: var(--cor-septagenaria);
+    border: 1px var(--cor-quarternaria) solid;
+  }
+
+/*
+---------------------------------------------------------------------
+  RODAPÉ
+---------------------------------------------------------------------
+*/
+footer {
+    padding: 20px;
+    margin-top: auto;
+    background-color: var(--cor-secundaria);
+}
+
+.rodape {
+    padding: 30px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+}
+
+.mensagem,
+.autores {
+    flex-basis: 50%;
+    text-align: center;
+    margin: 0;
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    display: flex;
+}
+
+footer>div {
+    flex: 1;
+}
+
+footer div {
+    text-align: center;
+}
+
+
+/* RESPONSIVIDADE */
+@media (min-width: 1201px) {
+    .denunciasP h3 {
+        font-size: 20px;
+    }
+
+    .denunciasP h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 720px) {
+    .navbar .links,
+    .navbar .login {
+        display: none;
+    }
+    
+    .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+    .name {
+        font-size: 7vmin;
+    }
+
+    .email{
+        font-size: 7vmin;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+
+    .name {
+        font-size: 8vmin;
+    }
+    
+    .email{
+        font-size: 8vmin;
+    }
+    
+    footer {
+        display: inline;
+    }
+
+    footer div{
+        margin-bottom: 30px;
+    }
+}

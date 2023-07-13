@@ -53,12 +53,9 @@ function printData() {
 function UserLogado() {
     users = leUsuarios();
 
-    if (!validate()) {
-        window.location = "../central.html";
-    } else {
+    if (validate()) {
         printData();
     }
-
 }
 
 /*

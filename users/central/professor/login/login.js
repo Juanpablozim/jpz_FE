@@ -1,4 +1,4 @@
-const usersDB = 'FEusers';
+const usersDB = 'FEteachers';
 const lastLogin = 'FELastLogin';
 const loginstr = "../users.html";
 
@@ -25,7 +25,7 @@ function logar(userid) {
 
     objDados = {
         login: [
-            { id: userid, horario: Date.now() }
+            { id: userid, horario: Date.now(), tipo: 1 }
         ]
     }
 
@@ -34,20 +34,25 @@ function logar(userid) {
     validate();
 }
 
-function validate () {
+
+function validate() {
     let strDados = localStorage.getItem(lastLogin);
     let objDados = {};
-
+  
     if (strDados) {
-        objDados = JSON.parse(strDados);
-
+      objDados = JSON.parse(strDados);
+      if (objDados.login[0].tipo == 1) {
+  
         if ((Date.now() - objDados.login[0].horario) < 1800000) {
-            return true;
-        }else{
-            return false;
+          return true;
+        } else {
+          return false;
         }
+      } else {
+        return false;
+      }
     }
-}
+  }
 
 function logado () {
     if (validate()){

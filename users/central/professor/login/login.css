@@ -1,7 +1,7 @@
 :root {
-    --cor-primaria: #006b79;
-    --cor-secundaria: aliceblue;
-    --cor-terciaria: white;
+    --cor-primaria: aliceblue;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: #006b79;
     --cor-quarternaria: black;
     --cor-quintenaria: gray;
     --cor-sextiaria: rgb(255, 23, 35);
@@ -38,6 +38,12 @@ body {
 }
 
 /* Form */
+.centralizar{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 h1 img {
     width: 50px;
     margin-right: 10px;
@@ -92,8 +98,8 @@ label {
 
 input {
     border-radius: 5px;
-    color: var(--cor-primaria);
-    border-bottom: 2px solid var(--cor-quintenaria);
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 40px;
@@ -164,7 +170,7 @@ input[type="submit"]:hover {
         font-size: 80px;
     }
 
-    .professor {
+    .aluno {
         display: block;
         margin-top: 40px;
     }
@@ -192,7 +198,7 @@ input[type="submit"]:hover {
         position: relative;
     }
 
-    .professor {
+    .aluno {
         display: block;
         margin-top: 40px;
     }
@@ -219,8 +225,8 @@ input[type="submit"]:hover {
         flex: 1 1 100%;
         position: relative;
     }
-    
-    .professor {
+
+    .aluno {
         display: block;
         margin-top: 40px;
     }

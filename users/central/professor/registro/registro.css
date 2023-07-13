@@ -1,7 +1,7 @@
 :root {
-    --cor-primaria: #006b79;
-    --cor-secundaria: aliceblue;
-    --cor-terciaria: white;
+    --cor-primaria: aliceblue;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: #006b79;
     --cor-quarternaria: black;
     --cor-quintenaria: gray;
     --cor-sextiaria: rgb(255, 23, 35);
@@ -38,15 +38,19 @@ body {
 }
 
 /* Form */
-h1 img {
-    width: 50px;
-    margin-right: 10px;
-}
-
-.Titulo{
+.Titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     margin-bottom: 25px;
 }
+
+.Titulo img {
+    margin-bottom: 10px;
+}
+
+
 
 .inicial {
     margin: 5px;
@@ -62,6 +66,12 @@ h1 img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#main-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
 }
 
 form {
@@ -92,8 +102,8 @@ label {
 
 input {
     border-radius: 5px;
-    color: var(--cor-primaria);
-    border-bottom: 2px solid var(--cor-quintenaria);
+    color: var(--cor-secundaria);
+    border-bottom: 2px solid var(--cor-secundaria);
     padding: 10px;
     font-size: 1rem;
     margin-bottom: 40px;
@@ -144,12 +154,12 @@ input[type="submit"]:hover {
     display: none;
 }
 
-/* RESPONSIVIDADE */
+/* Redimencionameto para telas com largura entre 600px e 1200px */
 @media screen and (min-width: 1201px) {
     h1 img {
-        width: 130px;
+        width: 150px;
     }
-    
+
     .Titulo {
         font-size: 100px;
     }
@@ -159,12 +169,12 @@ input[type="submit"]:hover {
     h1 img {
         width: 100px;
     }
-    
+
     .Titulo {
         font-size: 80px;
     }
 
-    .professor {
+    .aluno {
         display: block;
         margin-top: 40px;
     }
@@ -174,7 +184,7 @@ input[type="submit"]:hover {
     h1 img {
         width: 80px;
     }
-    
+
     .Titulo {
         font-size: 70px;
     }
@@ -192,7 +202,7 @@ input[type="submit"]:hover {
         position: relative;
     }
 
-    .professor {
+    .aluno {
         display: block;
         margin-top: 40px;
     }
@@ -202,11 +212,11 @@ input[type="submit"]:hover {
     h1 img {
         width: 70px;
     }
-    
+
     .Titulo {
         font-size: 60px;
     }
-    
+
     #main-container {
         width: 80%;
     }
@@ -219,8 +229,8 @@ input[type="submit"]:hover {
         flex: 1 1 100%;
         position: relative;
     }
-    
-    .professor {
+
+    .aluno {
         display: block;
         margin-top: 40px;
     }

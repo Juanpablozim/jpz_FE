@@ -111,7 +111,7 @@ function UserLogado() {
 
 function logoff() {
     localStorage.removeItem("FELastLogin");
-    window.location = "/login/login.html";
+    window.location = "../login/login.html";
 }
 
 document.getElementById("btnlogoff").addEventListener("click", logoff);
