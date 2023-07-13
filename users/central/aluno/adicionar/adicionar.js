@@ -6,6 +6,7 @@ function novaMateria() {
     const divNotas = document.getElementById("notas");
     const novaMateriaDiv = document.createElement("div");
     novaMateriaDiv.id = "materianova_" + contadorMaterias;
+    novaMateriaDiv.classList += "materianova";
     novaMateriaDiv.innerHTML = `
     <label class="inputLabel" for="materia_${contadorMaterias}">Materia:</label>
     <input class="materia" type="text" id="materia_${contadorMaterias}" name="materia_${contadorMaterias}" placeholder="Matematica" required>
@@ -63,13 +64,14 @@ function salvarDados() {
     const dadosAtualizados = dadosMateriasAntigos.concat(dadosMaterias);
     localStorage.setItem("dadosMaterias", JSON.stringify(dadosAtualizados));
 
-    location.reload();
+    window.location = "../users.html";
 }
 
 const incluirMateriaButton = document.getElementById("incluirMateria");
 incluirMateriaButton.addEventListener("click", novaMateria);
 
 const salvarButton = document.createElement("button");
+salvarButton.classList += "salvarBTN";
 salvarButton.innerText = "Salvar";
 salvarButton.addEventListener("click", salvarDados);
 
@@ -138,14 +140,10 @@ function UserLogado() {
 
 function gerarCaixasSelecao() {
     const nivelSelect = document.getElementsByName("nivel")[0];
-    const moduloDiv = document.querySelector(".modulo");
+    const moduloDiv = document.getElementById("modulo");
 
-    // Remover caixas de seleção existentes, exceto a primeira
-    const caixasSelecao = moduloDiv.querySelectorAll("select");
-    for (let i = 1; i < caixasSelecao.length; i++) {
-        moduloDiv.removeChild(caixasSelecao[i].previousElementSibling); // Remover o label
-        moduloDiv.removeChild(caixasSelecao[i]); // Remover o select
-    }
+    // Clear the content of the modulo div
+    moduloDiv.innerHTML = "";
 
     // Verificar o valor selecionado na select de nome nivel
     const nivelSelecionado = nivelSelect.value;
@@ -153,7 +151,8 @@ function gerarCaixasSelecao() {
     if (nivelSelecionado === "fundamental") {
         // Gerar caixa de seleção de Ano para o nível Fundamental
         const anoSelect = document.createElement("select");
-        anoSelect.name = "anoFundamental";
+        anoSelect.name = "ano";
+        anoSelect.classList.add("moduloatual");
         const labelAno = document.createElement("label");
         labelAno.innerHTML = "Ano:";
         labelAno.appendChild(anoSelect);
@@ -171,6 +170,7 @@ function gerarCaixasSelecao() {
         // Gerar caixa de seleção de Período para o nível Superior
         const periodoSelect = document.createElement("select");
         periodoSelect.name = "periodo";
+        periodoSelect.classList.add("moduloatual");
         const labelPeriodo = document.createElement("label");
         labelPeriodo.innerHTML = "Período:";
         labelPeriodo.appendChild(periodoSelect);
@@ -187,7 +187,8 @@ function gerarCaixasSelecao() {
     } else if (nivelSelecionado === "medio") {
         // Gerar caixa de seleção de Ano para o nível Médio
         const anoSelect = document.createElement("select");
-        anoSelect.name = "anoMedio";
+        anoSelect.name = "ano";
+        anoSelect.classList.add("moduloatual");
         const labelAno = document.createElement("label");
         labelAno.innerHTML = "Ano:";
         labelAno.appendChild(anoSelect);
@@ -203,6 +204,7 @@ function gerarCaixasSelecao() {
         moduloDiv.appendChild(labelAno);
     }
 }
+
 
 
 
