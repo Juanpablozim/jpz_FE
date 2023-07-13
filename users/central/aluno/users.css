@@ -4,7 +4,7 @@
     --cor-terciaria: aliceblue;
     --cor-quarternaria: orange;
     --cor-quintenaria: gray;
-    --cor-sextiaria: black;
+    --cor-sextinaria: black;
 }
 
 * {
@@ -14,12 +14,17 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html,
 body {
-    height: 100vh;
-    background-image: radial-gradient(var(--cor-primaria), var(--cor-secundaria));
-    background-size: cover;
-    background-position: center;
+    height: 100%;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
 
 li {
     list-style: none;
@@ -27,14 +32,11 @@ li {
 
 a {
     text-decoration: none;
-}
-
-.navbar a {
     color: var(--cor-terciaria);
     font-size: 1rem;
 }
 
-.navbar a:hover {
+a:hover {
     color: var(--cor-quarternaria);
 }
 
@@ -43,13 +45,20 @@ a {
 CABEÇALHO
 --------------------------------------------------------------------- 
 */
+.active {
+    color: var(--cor-quarternaria);
+}
+
+.identificacoes {
+    background-image: radial-gradient(var(--cor-primaria), var(--cor-secundaria));
+}
+
 header {
     position: relative;
     padding: 0 2rem;
 }
 
 .navbar {
-    background-color: transparent;
     background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
     width: 100%;
     height: 60px;
@@ -74,10 +83,6 @@ header {
 .navbar .links {
     display: flex;
     gap: 2rem;
-}
-
-.navbar .active {
-    color: var(--cor-quarternaria);
 }
 
 .toggle_btn {
@@ -135,136 +140,86 @@ header {
     justify-content: center;
 }
 
-.dropdown_menu .active {
-    color: var(--cor-quarternaria);
-}
-
 .dorpdown_menu .login {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-/* PESQUISA */
 
-.pesquisa {
+/*
+    USUARIO
+*/
+
+.foto {
     text-align: center;
 }
 
-.pesquisa input {
-    width: 80%;
-    font-weight: bold;
-    color: var(--cor-secundaria);
-    padding: 10px;
-    font-size: 5vmin;
-    border: 2px solid var(--cor-quarternaria);
-    border-radius: 5px;
-    outline: 0;
-}
-
-.pesquisa h1 {
-    color: var(--cor-terciaria);
-}
-
-.pesquisa i {
-    font-size: 5vmin;
-    background-color: var(--cor-terciaria);
-    color: var(--cor-secundaria);
-    padding: 10px;
+.userAvatar {
+    width: 20vmin;
+    height: 20vmin;
+    padding: 5vmin;
     border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-terciaria);
+    font-size: 12vmin;
 }
 
-/* FILTROS */
-.filtros {
-    margin-left: 9%;
-    margin-top: 20px;
+.name {
+    color: var(--cor-sextinaria);
+    font-family: serif;
+    text-align: center;
+    font-size: 5vw;
+    padding-bottom: 20px;
 }
 
-.filtros ul {
+.email {
+    color: var(--cor-terciaria);
+    margin-top: 5px;
+    font-size: 5vmin;
+    text-align: center;
+}
+
+/*
+LOGOFF
+*/
+.logoff {
+    margin: 50px;
     display: flex;
-    gap: 2rem;
+    justify-content: center;
 }
 
-
-.filtros a {
-    font-weight: 700;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid var(--cor-terciaria);
-    background-color: var(--cor-terciaria);
-    color: var(--cor-secundaria);
+.btnlogoff {
+    margin-bottom: 20px;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.filtros a:hover {
-    border: 1px solid var(--cor-quarternaria);
+.btnlogoff:hover {
+    background-color: transparent;
     color: var(--cor-quarternaria);
 }
 
-/* CARD */
-
-.cards {
-    margin-top: 30px;
-}
-
-.cards a {
-    text-decoration: none;
-    color: var(--cor-sextiaria);
-}
-
-.card {
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 20px;
-    width: 80%;
+.btnlogoff:active {
+    border: var(--cor-terciaria) 3px solid;
     background-color: var(--cor-terciaria);
-    display: flex;
+    color: var(--cor-quarternaria);
 }
 
-.card .img {
-    display: inline-block;
-    width: 200px;
-    margin-right: 20px;
-}
-
-.card img {
+/* CORPO */
+.corpo {
+    color: var(--cor-sextinaria);
     margin: 20px;
-    width: 200px;
-    border-radius: 10px;
 }
 
-.card .txts {
-    width: 100%;
-    padding: 20px;
-}
-
-.identificacao{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-grow: 1;
-}
-
-.card .txts .name {
-    font-size: 2rem;
-}
-
-.card .txts .avaliacao {
-    margin-left: auto;
-    color: var(--cor-secundaria);
-    font-weight: bold;
-    font-size: 2rem;
-}
-
-.card .txts .pontosfortes {
-    margin-top: 10px;
-}
-
-.card .txts .pontosfortes h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-.card .txts .pontoforte {
+.corpo .dificuldades .dificuldade {
     display: inline-block;
     background-color: var(--cor-secundaria);
     color: var(--cor-terciaria);
@@ -274,14 +229,61 @@ header {
     border: 1px solid var(--cor-secundaria);
 }
 
-.card .txts .faixaatuacao {
-    margin-top: 10px;
-    font-size: 1rem;
+/*
+  RODAPÉ
+*/
+footer {
+    padding: 20px;
+    margin-top: auto;
+    background-color: var(--cor-secundaria);
 }
 
-.card .txts .faixaatuacao h1 {
-    font-size: 1.5rem;
-    font-weight: 500;
+.rodape {
+    padding: 30px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    display: flex;
+    align-items: center;
+}
+
+.mensagem,
+.autores {
+    flex-basis: 50%;
+    text-align: center;
+    margin: 0;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 1201px) {
+    .denunciasP h3 {
+        font-size: 20px;
+    }
+
+    .denunciasP h2 {
+        font-size: 24px;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    display: flex;
+}
+
+footer>div {
+    flex: 1;
+}
+
+footer div {
+    text-align: center;
 }
 
 /* RESPOSIVIDADE */
@@ -300,17 +302,12 @@ header {
         display: block;
     }
 
-    .card {
-        display: block;
+    .name {
+        font-size: 7vmin;
     }
 
-    .card .img {
-        width: 100%;
-        text-align: center;
-    }
-
-    .card .txts {
-        width: 100%;
+    .email{
+        font-size: 7vmin;
     }
 }
 
@@ -320,24 +317,19 @@ header {
         width: unset;
     }
 
+    .name {
+        font-size: 8vmin;
+    }
+    
+    .email{
+        font-size: 8vmin;
+    }
+    
     footer {
         display: inline;
     }
 
     footer div{
         margin-bottom: 30px;
-    }
-
-    .card .identificacao{
-        display: block;
-        text-align: center;
-    }
-
-    .card .pontosfortes {
-        text-align: center;
-    }
-
-    .card .faixaatuacao {
-        text-align: center;
     }
 }

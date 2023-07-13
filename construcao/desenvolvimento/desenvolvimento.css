@@ -1,0 +1,33 @@
+:root {
+    --cor-primaria: #009c94;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: aliceblue;
+    --cor-quarternaria: orange;
+    --cor-quintenaria: gray;
+}
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-terciaria);
+    font-size: 3vmin;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+img {
+    width: 20%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--cor-quarternaria);
+}

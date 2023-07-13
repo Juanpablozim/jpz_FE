@@ -168,6 +168,29 @@ CORPO
     font-size: 6vw;
 }
 
+.card button{
+    display: inline;
+    background-color: transparent;
+    background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card button:hover{
+    background-image: linear-gradient(to left, var(--cor-primaria), var(--cor-secundaria));
+    color: var(--cor-terciaria);
+}
+.card button:active{
+    background-image: none;
+    color: var(--cor-quarternaria);
+}
+
     /* IMG TXT */
     .ImgTxt {
         padding: 20px;
@@ -203,28 +226,6 @@ CORPO
         font-size: 1rem;
     }
 
-    .Txt button{
-        display: inline;
-        background-color: transparent;
-        background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
-        color: var(--cor-terciaria);
-        padding: 0.5rem 1rem;
-        border: var(--cor-quarternaria) 3px solid;
-        outline: none;
-        border-radius: 20px;
-        font-size: 0.8 rem;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    .Txt button:hover{
-        background-image: linear-gradient(to left, var(--cor-primaria), var(--cor-secundaria));
-        color: var(--cor-terciaria);
-    }
-    .Txt button:active{
-        background-image: none;
-        color: var(--cor-quarternaria);
-    }
 
     /* BACK IMG */
     .backImg{
