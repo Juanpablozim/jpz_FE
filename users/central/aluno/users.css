@@ -333,3 +333,23 @@ footer div {
         margin-bottom: 30px;
     }
 }
+
+/* NOTAS */
+.notamateria {
+    border: var(--cor-quarternaria) 1px solid;
+    width: 33%;
+    display: inline-block;
+}
+
+.anomateria {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.materia {
+    display: inline-block;
+}
+
+.nota {
+    display: inline-block;
+}

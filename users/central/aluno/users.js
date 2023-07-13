@@ -1,3 +1,6 @@
+// DBs
+const dbMaterias = "dadosMaterias";
+
 /*
 --------------------------------------------------------------------
 NAVBAR 
@@ -24,7 +27,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     var navbar = document.querySelector('.navbar');
     if (window.scrollY === 0) {
         navbar.style.backgroundImage = 'none';
@@ -101,6 +104,7 @@ function UserLogado() {
         window.location = "../central.html";
     } else {
         printData();
+        preencheNotas()
     }
 
 }
@@ -111,3 +115,36 @@ function logoff() {
 }
 
 document.getElementById("btnlogoff").addEventListener("click", logoff);
+
+function lebancodeDados(BancodeDados) {
+    let strDados = localStorage.getItem(BancodeDados);
+    let objDados = {};
+
+    objDados = JSON.parse(strDados);
+
+    return objDados;
+}
+
+function preencheNotas() {
+    let materias = lebancodeDados("dadosMaterias");
+
+    if (materias) {
+        let divtxt;
+        for (let i = 0; i < materias.length; i++) {
+            const coisas = materias[i];
+
+            if (coisas.userid === ultimoLogin) {
+                if (coisas.nivel) {
+                    divtxt = document.getElementById(coisas.nivel);
+                    if(coisas.nivel == "superior"){
+                        divtxt.innerHTML += `<div class="notamateria"><div class="anomateria">Periodo:${coisas.modulo}</div><div class="materia">${coisas.materia}</div><div class="nota">${coisas.nota}</div></div>`;
+                    } else if ( coisas.nivel == "pos") {
+                        divtxt.innerHTML += `<div class="notamateria"><div class="materia">${coisas.materia}</div>${coisas.nota}</div>`;
+                    } else {
+                        divtxt.innerHTML += `<div class="notamateria"><div class="anomateria">Ano:${coisas.modulo}</div><div class="materia">${coisas.materia}</div><div class="nota">${coisas.nota}</div></div>`;
+                    }
+                }
+            }
+        }
+    }
+}

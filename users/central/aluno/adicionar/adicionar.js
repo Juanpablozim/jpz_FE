@@ -1,4 +1,4 @@
-
+const dbMaterias = "dadosMaterias";
 let contadorMaterias = 1;
 const dadosMaterias = [];
 
@@ -44,17 +44,29 @@ function salvarDados() {
     for (let i = 0; i < materias.length; i++) {
         const materia = materias[i].value;
         const nota = notas[i].value;
+        let dadosMateria = {};
 
-        const dadosMateria = {
-            userid: ultimoLogin,
-            materia: materia,
-            nota: nota
-        };
+        if(document.getElementsByName("nivel")[0].value != 'pos'){
+            dadosMateria = {
+                nivel: document.getElementsByName("nivel")[0].value,
+                modulo: document.getElementsByName("moduloatual")[0].value,
+                userid: ultimoLogin,
+                materia: materia,
+                nota: nota
+            };
+        }else{
+            dadosMateria = {
+                nivel: document.getElementsByName("nivel")[0].value,
+                userid: ultimoLogin,
+                materia: materia,
+                nota: nota
+            };
+        }
 
         dadosMaterias.push(dadosMateria);
     }
 
-    const dadosSalvos = localStorage.getItem("dadosMaterias");
+    const dadosSalvos = localStorage.getItem(dbMaterias);
     let dadosMateriasAntigos = [];
 
     if (dadosSalvos) {
@@ -151,7 +163,7 @@ function gerarCaixasSelecao() {
     if (nivelSelecionado === "fundamental") {
         // Gerar caixa de seleção de Ano para o nível Fundamental
         const anoSelect = document.createElement("select");
-        anoSelect.name = "ano";
+        anoSelect.name = "moduloatual";
         anoSelect.classList.add("moduloatual");
         const labelAno = document.createElement("label");
         labelAno.innerHTML = "Ano:";
@@ -169,7 +181,7 @@ function gerarCaixasSelecao() {
     } else if (nivelSelecionado === "superior") {
         // Gerar caixa de seleção de Período para o nível Superior
         const periodoSelect = document.createElement("select");
-        periodoSelect.name = "periodo";
+        periodoSelect.name = "moduloatual";
         periodoSelect.classList.add("moduloatual");
         const labelPeriodo = document.createElement("label");
         labelPeriodo.innerHTML = "Período:";
@@ -187,7 +199,7 @@ function gerarCaixasSelecao() {
     } else if (nivelSelecionado === "medio") {
         // Gerar caixa de seleção de Ano para o nível Médio
         const anoSelect = document.createElement("select");
-        anoSelect.name = "ano";
+        anoSelect.name = "moduloatual";
         anoSelect.classList.add("moduloatual");
         const labelAno = document.createElement("label");
         labelAno.innerHTML = "Ano:";
