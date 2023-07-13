@@ -11,23 +11,21 @@
 
 <body onload="UserLogado()">
     <div class="identificacoes">
-    <!-- cabeçalho -->
+        <!-- cabeçalho -->
         <header class="navbar">
             <div class="logo">Find Educators</div>
             <ul class="links">
                 <li><a href="../../../index.html">Home</a></li>
-                <li><a href="pesquisa/pesquisa.html">Pesquisar</a></li>
+                <li><a href="../../../pesquisa/pesquisa.html">Pesquisar</a></li>
                 <li><a href="#" class="active">Página do usuário</a></li>
             </ul>
-            <a href="#" class="login">Login</a>
             <div class="toggle_btn">
                 <i class="fa-solid fa-bars"></i>
             </div>
             <div class="dropdown_menu open">
                 <li><a href="../../../index.html">Home</a></li>
-                <li><a href="pesquisa/pesquisa.html">Pesquisar</a></li>
+                <li><a href="../../../pesquisa/pesquisa.html">Pesquisar</a></li>
                 <li><a href="#" class="active">Página do usuário</a></li>
-                <li><a href="#" class="login">Login</a></li>
             </div>
         </header>
         <div class="divisor"></div>
@@ -43,19 +41,23 @@
         <div class="logoff">
             <button class="btnlogoff" id="btnlogoff">FAZER LOGOFF</button>
         </div>
-        
+
     </div>
-    
+
     <!-- CORPO -->
     <div class="corpo">
+        <div class="centralizar">
+            <a href="adicionar/adicionar.html"><button class="btn" id="addnotas">CADASTRAR NOTAS</button></a>
+        </div>
         <div class="Maioresdificuldades">
             <h1>Maiores dificuldade(s):</h1>
             <div id="dificuldades" class="dificuldades">
-                <div class="dificuldade">Matematica</div>
-                <div class="dificuldade">Português</div>
+                <div class="dificuldade">Materia 1</div>
+                <div class="dificuldade">Materia 2</div>
             </div>
         </div>
         <div class="notas">
+            <h1>Suas notas: </h1>
             <div class="fundamental">
                 <h1>Fundamental</h1>
                 <div class="materias" id="fundamental">
@@ -69,7 +71,7 @@
             <div class="superior">
                 <h1>Graduação</h1>
                 <div class="materias" id="superior"></div>
-                
+
             </div>
             <div class="posgraduacao">
                 <h1>Pós graduação</h1>

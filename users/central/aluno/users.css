@@ -5,6 +5,8 @@
     --cor-quarternaria: orange;
     --cor-quintenaria: gray;
     --cor-sextinaria: black;
+    --cor-septagenaria: rgb(218, 218, 218);
+    --cor-octagenaria: #ebf4f5;
 }
 
 * {
@@ -213,7 +215,39 @@ LOGOFF
     color: var(--cor-quarternaria);
 }
 
-/* CORPO */
+/*
+---------------------------------------------------------------------
+    CORPO
+---------------------------------------------------------------------
+*/
+.centralizar{
+    text-align: center;
+}
+
+.btn{
+    margin-bottom: 20px;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: var(--cor-secundaria) 3px solid;
+    background-color: transparent;
+    color: var(--cor-secundaria);
+}
+
+.btn:active {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-quarternaria);
+}
+
 .corpo {
     color: var(--cor-sextinaria);
     margin: 20px;
@@ -229,8 +263,55 @@ LOGOFF
     border: 1px solid var(--cor-secundaria);
 }
 
+/* NOTAS */
+.notas {
+    margin-top: 30px;
+    padding-top: 10px;
+    border-top: 1px solid var(--cor-secundaria);
+}
+
+.notamateria {
+    border-radius: 20px;
+    margin: 1%;
+    padding: 1%;
+    background-color: var(--cor-octagenaria);
+    width: 30%;
+    display: inline-block;
+}
+
+.anomateria {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+}
+
+.materia {
+    font-weight: bold;
+    float: left;
+}
+
+.nota {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    float: right;
+}
+
+.barra-progresso {
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--cor-secundaria);
+}
+
+.base-barra-progresso {
+    margin-top: 20px;
+    background-color: var(--cor-septagenaria);
+    border: 1px var(--cor-quarternaria) solid;
+  }
+
 /*
+---------------------------------------------------------------------
   RODAPÉ
+---------------------------------------------------------------------
 */
 footer {
     padding: 20px;
@@ -253,16 +334,6 @@ footer {
     margin: 0;
 }
 
-/* RESPONSIVIDADE */
-@media (min-width: 1201px) {
-    .denunciasP h3 {
-        font-size: 20px;
-    }
-
-    .denunciasP h2 {
-        font-size: 24px;
-    }
-}
 
 * {
     margin: 0px;
@@ -286,7 +357,17 @@ footer div {
     text-align: center;
 }
 
-/* RESPOSIVIDADE */
+
+/* RESPONSIVIDADE */
+@media (min-width: 1201px) {
+    .denunciasP h3 {
+        font-size: 20px;
+    }
+
+    .denunciasP h2 {
+        font-size: 24px;
+    }
+}
 
 @media (max-width: 720px) {
     .navbar .links,
@@ -332,24 +413,4 @@ footer div {
     footer div{
         margin-bottom: 30px;
     }
-}
-
-/* NOTAS */
-.notamateria {
-    border: var(--cor-quarternaria) 1px solid;
-    width: 33%;
-    display: inline-block;
-}
-
-.anomateria {
-    color: var(--cor-secundaria);
-    font-weight: bold;
-}
-
-.materia {
-    display: inline-block;
-}
-
-.nota {
-    display: inline-block;
 }

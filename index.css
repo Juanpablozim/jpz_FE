@@ -106,6 +106,10 @@ header{
     color: var(--cor-quarternaria);
 }
 
+#divlogin{
+    color: var(--cor-terciaria);
+}
+
 /* MENU DROPDOWN */
 .dropdown_menu {
     height: 0px;

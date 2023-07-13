@@ -116,6 +116,12 @@ function logoff() {
 
 document.getElementById("btnlogoff").addEventListener("click", logoff);
 
+/* 
+-------------
+    NOTAS
+-------------
+*/
+
 function lebancodeDados(BancodeDados) {
     let strDados = localStorage.getItem(BancodeDados);
     let objDados = {};
@@ -127,24 +133,104 @@ function lebancodeDados(BancodeDados) {
 
 function preencheNotas() {
     let materias = lebancodeDados("dadosMaterias");
-
+  
     if (materias) {
-        let divtxt;
-        for (let i = 0; i < materias.length; i++) {
-            const coisas = materias[i];
+      let divtxt;
+      for (let i = 0; i < materias.length; i++) {
+        const coisas = materias[i];
+  
+        if (coisas.userid === ultimoLogin) {
+          if (coisas.nivel) {
+            divtxt = document.getElementById(coisas.nivel);
+            if (coisas.nivel === "superior") {
+              const barraProgresso = document.createElement("div");
+              barraProgresso.classList.add("barra-progresso");
+  
+              const basebarraProgresso = document.createElement("div");
+              basebarraProgresso.classList.add("base-barra-progresso");
 
-            if (coisas.userid === ultimoLogin) {
-                if (coisas.nivel) {
-                    divtxt = document.getElementById(coisas.nivel);
-                    if(coisas.nivel == "superior"){
-                        divtxt.innerHTML += `<div class="notamateria"><div class="anomateria">Periodo:${coisas.modulo}</div><div class="materia">${coisas.materia}</div><div class="nota">${coisas.nota}</div></div>`;
-                    } else if ( coisas.nivel == "pos") {
-                        divtxt.innerHTML += `<div class="notamateria"><div class="materia">${coisas.materia}</div>${coisas.nota}</div>`;
-                    } else {
-                        divtxt.innerHTML += `<div class="notamateria"><div class="anomateria">Ano:${coisas.modulo}</div><div class="materia">${coisas.materia}</div><div class="nota">${coisas.nota}</div></div>`;
-                    }
-                }
+              const anoMateria = document.createElement("div");
+              anoMateria.classList.add("anomateria");
+              anoMateria.textContent = `Periodo: ${coisas.modulo}`;
+  
+              barraProgresso.style.width = `${coisas.nota}%`;
+  
+              const materiaNome = document.createElement("div");
+              materiaNome.classList.add("materia");
+              materiaNome.textContent = coisas.materia;
+  
+              const notaValor = document.createElement("div");
+              notaValor.classList.add("nota");
+              notaValor.textContent = coisas.nota;
+  
+              const divMateria = document.createElement("div");
+              divMateria.classList.add("notamateria");
+              divMateria.appendChild(anoMateria);
+              divMateria.appendChild(materiaNome);
+              divMateria.appendChild(notaValor);
+              divMateria.appendChild(basebarraProgresso);
+              basebarraProgresso.appendChild(barraProgresso);
+  
+              divtxt.appendChild(divMateria);
+            } else if (coisas.nivel === "pos") {
+                const barraProgresso = document.createElement("div");
+                barraProgresso.classList.add("barra-progresso");
+  
+                const basebarraProgresso = document.createElement("div");
+                basebarraProgresso.classList.add("base-barra-progresso");
+    
+                barraProgresso.style.width = `${coisas.nota}%`;
+
+              const materiaNome = document.createElement("div");
+              materiaNome.classList.add("materia");
+              materiaNome.textContent = coisas.materia;
+  
+              const notaValor = document.createElement("div");
+              notaValor.classList.add("nota");
+              notaValor.textContent = coisas.nota;
+  
+              const divMateria = document.createElement("div");
+              divMateria.classList.add("notamateria");
+              divMateria.appendChild(materiaNome);
+              divMateria.appendChild(notaValor);
+              divMateria.appendChild(basebarraProgresso);
+              basebarraProgresso.appendChild(barraProgresso);
+  
+              divtxt.appendChild(divMateria);
+            } else {
+              const barraProgresso = document.createElement("div");
+              barraProgresso.classList.add("barra-progresso");
+
+              const basebarraProgresso = document.createElement("div");
+              basebarraProgresso.classList.add("base-barra-progresso");
+  
+              barraProgresso.style.width = `${coisas.nota}%`;
+  
+              const anoMateria = document.createElement("div");
+              anoMateria.classList.add("anomateria");
+              anoMateria.textContent = `Ano: ${coisas.modulo}`;
+  
+              const materiaNome = document.createElement("div");
+              materiaNome.classList.add("materia");
+              materiaNome.textContent = coisas.materia;
+  
+              const notaValor = document.createElement("div");
+              notaValor.classList.add("nota");
+              notaValor.textContent = coisas.nota;
+  
+              const divMateria = document.createElement("div");
+              divMateria.classList.add("notamateria");
+              divMateria.appendChild(anoMateria);
+              divMateria.appendChild(materiaNome);
+              divMateria.appendChild(notaValor);
+              divMateria.appendChild(basebarraProgresso);
+              basebarraProgresso.appendChild(barraProgresso);
+  
+              divtxt.appendChild(divMateria);
             }
+          }
         }
+      }
     }
-}
+  }
+  
