@@ -1,6 +1,6 @@
 const usersDB = 'FEusers';
 const lastLogin = 'FELastLogin';
-const loginstr = "../aluno/users.html";
+const loginstr = "../users.html";
 
 function leDados() {
     let strDados = localStorage.getItem(usersDB);
@@ -46,6 +46,12 @@ function validate () {
         }else{
             return false;
         }
+    }
+}
+
+function logado () {
+    if (validate){
+        window.location = loginstr;
     }
 }
 

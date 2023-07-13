@@ -1,4 +1,6 @@
 const usersDB = 'FEusers';
+const lastLogin = 'FELastLogin';
+const loginstr = "../users.html";
 
 function leDados () {
     let strDados = localStorage.getItem(usersDB);
@@ -275,3 +277,24 @@ submit.addEventListener('click', function(e) {
     window.location = "../login/login.html";
   }
 });
+
+function validate () {
+  let strDados = localStorage.getItem(lastLogin);
+  let objDados = {};
+
+  if (strDados) {
+      objDados = JSON.parse(strDados);
+
+      if ((Date.now() - objDados.login[0].horario) < 1800000) {
+          return true;
+      }else{
+          return false;
+      }
+  }
+}
+
+function logado () {
+  if (validate){
+      window.location = loginstr;
+  }
+}

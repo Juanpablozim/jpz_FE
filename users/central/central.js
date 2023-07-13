@@ -22,6 +22,6 @@ function redirecionar(){
     if( validate() ){
         window.location = "aluno/users.html";
     }else{
-        window.location = "login/login.html";
+        window.location = "aluno/login/login.html";
     }
 }
