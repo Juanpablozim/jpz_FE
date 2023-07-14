@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="materias.css">
+    <title>Adicionar Matéria</title>
+</head>
+
+<body onload="UserLogado()">
+    <div class="form">
+        <div class="cabecalho">
+            <h1>Adicionar Matéria Lecionada</h1>
+            <div class="inicial">Voltar à <a href="../../users.html">pagina inicial</a></div>
+        </div>
+        <div class="notas" id="materia">
+            <div id="materianova" class="materianova">
+                <label class="inputLabel" for="materia">Materia:</label>
+                <input class="materia" type="text" id="materia" name="materia" placeholder="Matematica" required>
+
+                <button id="incluirMateria" class="incluirMateria">+</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="materias.js"></script>
+
+</body>
+
+</html>

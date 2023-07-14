@@ -43,6 +43,7 @@ function validate() {
     if (strDados) {
         objDados = JSON.parse(strDados);
         if (objDados.login[0].tipo === 1) {
+            ultimoLogin = objDados.login[0].id;
 
             if ((Date.now() - objDados.login[0].horario) < 1800000) {
                 return true;

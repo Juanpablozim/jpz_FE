@@ -137,7 +137,7 @@ function lebancodeDados(BancodeDados) {
 }
 
 function preencheNotas() {
-    let materias = lebancodeDados("dadosMaterias");
+    let materias = lebancodeDados(dbMaterias);
 
     if (materias) {
         let divtxt;

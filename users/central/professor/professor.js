@@ -1,6 +1,8 @@
 // BANCOS DE DADOS
 const usersDB = 'FEteachers';
 const lastLogin = 'FELastLogin';
+const dbMaterias = 'FElecionadas';
+const dbNiveis = 'FENiveisL';
 
 /*
 --------------------------------------------------------------------
@@ -107,6 +109,117 @@ function UserLogado() {
         window.location = "../central.html";
     } else {
         printData();
+        preencheMaterias();
     }
 
 }
+
+/*
+----------------------------------
+    DADOS USUARIOS
+----------------------------------
+*/
+
+function lebancodeDados(BancodeDados) {
+    let strDados = localStorage.getItem(BancodeDados);
+    let objDados = {};
+
+    objDados = JSON.parse(strDados);
+
+    return objDados;
+}
+
+function preencheMaterias() {
+    let materias = lebancodeDados(dbMaterias);
+    let niveis = lebancodeDados(dbNiveis);
+  
+    if (materias) {
+      let divtxt = document.getElementById("materiaslecionadas");
+      for (let i = 0; i < materias.length; i++) {
+        const coisas = materias[i];
+        if (coisas.userid === ultimoLogin) {
+          const materiaElement = document.createElement("div");
+          materiaElement.className = "materialecionada";
+          materiaElement.textContent = getLevelName(coisas.materia);
+          materiaElement.addEventListener("click", excluirMateria);
+          divtxt.appendChild(materiaElement);
+        }
+      }
+    }
+  
+    if (niveis) {
+      let divniveis = document.getElementById("niveislecionados");
+      for (let i = 0; i < niveis.length; i++) {
+        const coisas = niveis[i];
+        if (coisas.userid === ultimoLogin && coisas.checked === true) {
+          divniveis.innerHTML += `<div class="nivellecionado">${getLevelName(
+            coisas.materia
+          )}</div>`;
+        }
+      }
+    }
+  }
+  
+
+function getLevelName(level) {
+    switch (level) {
+        case 'fundamental1':
+            return 'Fundamental I';
+        case 'fundamental2':
+            return 'Fundamental II';
+        case 'medio':
+            return 'Médio';
+        case 'graduacao':
+            return 'Graduação';
+        case 'posGraduacao':
+            return 'Pós Graduação';
+        default:
+            return level;
+    }
+}
+
+/* EXCLUIR MATERIA */
+
+function excluirMateria(event) {
+    const materia = event.target.textContent;
+    const dadosSalvos = localStorage.getItem(dbMaterias);
+    let dadosMateriasAntigos = [];
+  
+    if (dadosSalvos) {
+      dadosMateriasAntigos = JSON.parse(dadosSalvos);
+    }
+  
+    const dadosAtualizados = dadosMateriasAntigos.filter(
+      (dadosMateria) => dadosMateria.materia !== materia
+    );
+  
+    localStorage.setItem(dbMaterias, JSON.stringify(dadosAtualizados));
+  
+    event.target.remove();
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const materiasLecionadas = document.getElementById("materiaslecionadas");
+  
+    materiasLecionadas.addEventListener("click", function (event) {
+      if (event.target.classList.contains("materia")) {
+        excluirMateria(event);
+      }
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const materiasLecionadas = document.getElementById("materiaslecionadas");
+  
+    materiasLecionadas.addEventListener("mouseover", function(event) {
+      if (event.target.classList.contains("materialecionada")) {
+        const originalText = event.target.innerHTML;
+        event.target.innerHTML = "...........";
+        event.target.addEventListener("mouseout", function() {
+          event.target.innerHTML = originalText;
+        });
+      }
+    });
+  });
+  
+  
