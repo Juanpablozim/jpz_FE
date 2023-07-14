@@ -2,19 +2,19 @@ const usersDB = 'FEusers';
 const lastLogin = 'FELastLogin';
 const loginstr = "../users.html";
 
-function leDados() {
+
+function leDados () {
     let strDados = localStorage.getItem(usersDB);
     let objDados = {};
 
     if (strDados) {
-        objDados = JSON.parse(strDados);
+        objDados = JSON.parse (strDados);
     }
     else {
-        objDados = {
-            usuarios: [
-                { email: "gabriel@gmail.com", nome: "Gabriel", sobrenome: "Quaresma", senha: "Gabriel10" }
-            ]
-        }
+        objDados = { usuarios: [ 
+                        {id: 1, email: "gabriel@gmail.com",nome: "Gabriel", sobrenome: "Quaresma", senha: "Gabriel10"},
+                        {id: 2, email: "address@email.domain",nome: "Óscar", sobrenome: "da Silva Oliveira", senha: "Senha123"}
+                    ]}
     }
 
     return objDados;
@@ -25,7 +25,7 @@ function logar(userid) {
 
     objDados = {
         login: [
-            { id: userid, horario: Date.now() }
+            { id: userid, horario: Date.now(), tipo: 0 }
         ]
     }
 
@@ -34,18 +34,26 @@ function logar(userid) {
     validate();
 }
 
-function validate () {
+function validate() {
     let strDados = localStorage.getItem(lastLogin);
     let objDados = {};
 
     if (strDados) {
         objDados = JSON.parse(strDados);
 
-        if ((Date.now() - objDados.login[0].horario) < 1800000) {
-            return true;
-        }else{
+        if ( objDados.login[0].tipo === 0 ) {
+            ultimoLogin = objDados.login[0].id;
+
+            if ((Date.now() - objDados.login[0].horario) < 1800000) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
             return false;
         }
+    }else{
+        return false;
     }
 }
 
