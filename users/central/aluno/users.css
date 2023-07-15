@@ -359,15 +359,6 @@ footer div {
 
 
 /* RESPONSIVIDADE */
-@media (min-width: 1201px) {
-    .denunciasP h3 {
-        font-size: 20px;
-    }
-
-    .denunciasP h2 {
-        font-size: 24px;
-    }
-}
 
 @media (max-width: 720px) {
     .navbar .links,
@@ -412,5 +403,9 @@ footer div {
 
     footer div{
         margin-bottom: 30px;
+    }
+
+    .mensagemexcluirmateria{
+        display: inline;
     }
 }

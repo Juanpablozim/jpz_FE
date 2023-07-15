@@ -1,0 +1,94 @@
+:root {
+    --cor-primaria: #009c94;
+    --cor-secundaria: #006b79;
+    --cor-terciaria: aliceblue;
+    --cor-quarternaria: orange;
+    --cor-quintenaria: gray;
+    --cor-sextiaria: black;
+}
+
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-image: radial-gradient( var(--cor-primaria), var(--cor-secundaria) );
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-terciaria);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: var(--cor-quarternaria);
+    font-size: 1rem;
+}
+
+
+a:hover{
+    color: var(--cor-sextiaria);
+}
+
+/* FOMULARIO */
+.inicial {
+    margin-bottom: 40px;
+}
+
+.form{
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+textarea{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    border: var(--cor-secundaria) 2px solid;
+    padding: 5px;
+    display: block;
+    width: 100%;
+    outline: none;
+    resize: none;
+}
+
+.salvarBTN {
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-terciaria);
+    padding: 0.5rem 1rem;
+    border: var(--cor-quarternaria) 3px solid;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8 rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.salvarBTN:hover {
+    background-color: transparent;
+    color: var(--cor-quarternaria);
+}
+
+.salvarBTN:active {
+    border: var(--cor-terciaria) 3px solid;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-quarternaria);
+}

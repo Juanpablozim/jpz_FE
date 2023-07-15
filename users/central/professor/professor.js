@@ -3,6 +3,7 @@ const usersDB = 'FEteachers';
 const lastLogin = 'FELastLogin';
 const dbMaterias = 'FElecionadas';
 const dbNiveis = 'FENiveisL';
+const dbBIO = "FEbio";
 
 /*
 --------------------------------------------------------------------
@@ -109,6 +110,7 @@ function UserLogado() {
         window.location = "../central.html";
     } else {
         printData();
+        escreveBIO();
         preencheMaterias();
     }
 
@@ -132,34 +134,34 @@ function lebancodeDados(BancodeDados) {
 function preencheMaterias() {
     let materias = lebancodeDados(dbMaterias);
     let niveis = lebancodeDados(dbNiveis);
-  
+
     if (materias) {
-      let divtxt = document.getElementById("materiaslecionadas");
-      for (let i = 0; i < materias.length; i++) {
-        const coisas = materias[i];
-        if (coisas.userid === ultimoLogin) {
-          const materiaElement = document.createElement("div");
-          materiaElement.className = "materialecionada";
-          materiaElement.textContent = getLevelName(coisas.materia);
-          materiaElement.addEventListener("click", excluirMateria);
-          divtxt.appendChild(materiaElement);
+        let divtxt = document.getElementById("materiaslecionadas");
+        for (let i = 0; i < materias.length; i++) {
+            const coisas = materias[i];
+            if (coisas.userid === ultimoLogin) {
+                const materiaElement = document.createElement("div");
+                materiaElement.className = "materialecionada";
+                materiaElement.textContent = getLevelName(coisas.materia);
+                materiaElement.addEventListener("click", excluirMateria);
+                divtxt.appendChild(materiaElement);
+            }
         }
-      }
     }
-  
+
     if (niveis) {
-      let divniveis = document.getElementById("niveislecionados");
-      for (let i = 0; i < niveis.length; i++) {
-        const coisas = niveis[i];
-        if (coisas.userid === ultimoLogin && coisas.checked === true) {
-          divniveis.innerHTML += `<div class="nivellecionado">${getLevelName(
-            coisas.materia
-          )}</div>`;
+        let divniveis = document.getElementById("niveislecionados");
+        for (let i = 0; i < niveis.length; i++) {
+            const coisas = niveis[i];
+            if (coisas.userid === ultimoLogin && coisas.checked === true) {
+                divniveis.innerHTML += `<div class="nivellecionado">${getLevelName(
+                    coisas.materia
+                )}</div>`;
+            }
         }
-      }
     }
-  }
-  
+}
+
 
 function getLevelName(level) {
     switch (level) {
@@ -184,42 +186,62 @@ function excluirMateria(event) {
     const materia = event.target.textContent;
     const dadosSalvos = localStorage.getItem(dbMaterias);
     let dadosMateriasAntigos = [];
-  
-    if (dadosSalvos) {
-      dadosMateriasAntigos = JSON.parse(dadosSalvos);
-    }
-  
-    const dadosAtualizados = dadosMateriasAntigos.filter(
-      (dadosMateria) => dadosMateria.materia !== materia
-    );
-  
-    localStorage.setItem(dbMaterias, JSON.stringify(dadosAtualizados));
-  
-    event.target.remove();
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    const materiasLecionadas = document.getElementById("materiaslecionadas");
-  
-    materiasLecionadas.addEventListener("click", function (event) {
-      if (event.target.classList.contains("materia")) {
-        excluirMateria(event);
-      }
-    });
-  });
 
-  document.addEventListener("DOMContentLoaded", function() {
+    if (dadosSalvos) {
+        dadosMateriasAntigos = JSON.parse(dadosSalvos);
+    }
+
+    const dadosAtualizados = dadosMateriasAntigos.filter(
+        (dadosMateria) => dadosMateria.materia !== materia
+    );
+
+    localStorage.setItem(dbMaterias, JSON.stringify(dadosAtualizados));
+
+    event.target.remove();
+}
+
+function escreveBIO() {
+    const bioDiv = document.getElementById("bio");
+
+    const dadosSalvos = localStorage.getItem(dbBIO);
+    if (dadosSalvos) {
+        const dadosMaterias = JSON.parse(dadosSalvos);
+        const usuarioLogadoBio = dadosMaterias.find(
+            (dadosMateria) => dadosMateria.userid === ultimoLogin
+        );
+
+        if (usuarioLogadoBio && usuarioLogadoBio.bio) {
+            bioDiv.innerHTML = `<a href="adicionar/bio/bio.html">${usuarioLogadoBio.bio} <i class="fa-solid fa-pencil"></i></a>`;
+        }
+    }
+}
+
+function escreveMateriasLecionadas() {
     const materiasLecionadas = document.getElementById("materiaslecionadas");
-  
-    materiasLecionadas.addEventListener("mouseover", function(event) {
-      if (event.target.classList.contains("materialecionada")) {
-        const originalText = event.target.innerHTML;
-        event.target.innerHTML = "...........";
-        event.target.addEventListener("mouseout", function() {
-          event.target.innerHTML = originalText;
-        });
-      }
+
+    materiasLecionadas.addEventListener("click", function (event) {
+        if (event.target.classList.contains("materia")) {
+            excluirMateria(event);
+        }
     });
-  });
-  
-  
+}
+
+function EventoExcluirMateriasLecionadas () {
+    const materiasLecionadas = document.getElementById("materiaslecionadas");
+
+    materiasLecionadas.addEventListener("mouseover", function (event) {
+        if (event.target.classList.contains("materialecionada")) {
+            const originalText = event.target.innerHTML;
+            event.target.innerHTML = "...........";
+            event.target.addEventListener("mouseout", function () {
+                event.target.innerHTML = originalText;
+            });
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    escreveMateriasLecionadas();
+    EventoExcluirMateriasLecionadas ();
+});
+

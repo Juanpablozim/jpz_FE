@@ -3,28 +3,28 @@
     --cor-secundaria: rgb(192, 125, 0);
     --cor-terciaria: aliceblue;
     --cor-quarternaria: #006b79;
-    --cor-quintenaria: gray;
+    --cor-quintenaria: rgb(70, 70, 70);
     --cor-sextenaria: rgb(202, 202, 202);
 }
 
-*{
+* {
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--cor-terciaria);
     font-size: 1rem;
 }
 
-a:hover{
+a:hover {
     color: var(--cor-quarternaria);
 }
 
@@ -38,12 +38,12 @@ CABEÇALHO
     font-weight: bold;
 }
 
-header{
+header {
     position: relative;
     padding: 0 2rem;
 }
 
-.navbar{
+.navbar {
     background-color: transparent;
     background-image: linear-gradient(to right, var(--cor-primaria), var(--cor-secundaria));
     width: 100%;
@@ -56,22 +56,22 @@ header{
     z-index: 999;
 }
 
-.divisor{
+.divisor {
     padding-top: 70px;
 }
 
-.navbar .logo{
+.navbar .logo {
     color: var(--cor-terciaria);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.navbar .links{
+.navbar .links {
     display: flex;
     gap: 2rem;
 }
 
-.navbar .active{
+.navbar .active {
     color: var(--cor-quarternaria);
 }
 
@@ -82,7 +82,7 @@ header{
     display: none;
 }
 
-.login{
+.login {
     background-color: var(--cor-quarternaria);
     color: var(--cor-terciaria);
     padding: 0.5rem 1rem;
@@ -94,18 +94,18 @@ header{
     cursor: pointer;
 }
 
-.login:hover{
+.login:hover {
     background-color: transparent;
     color: var(--cor-quarternaria);
 }
 
-.login:active{
+.login:active {
     border: var(--cor-terciaria) 3px solid;
     background-color: var(--cor-terciaria);
     color: var(--cor-quarternaria);
 }
 
-#divlogin{
+#divlogin {
     color: var(--cor-terciaria);
 }
 
@@ -116,29 +116,29 @@ header{
     right: 2rem;
     top: 60px;
     width: 300px;
-    background: rgba( 255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(15px);
     border-radius: 10px;
     overflow: hidden;
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dropdown_menu.open{
+.dropdown_menu.open {
     height: 240px;
 }
 
-.dropdown_menu li{
+.dropdown_menu li {
     padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.dropdown_menu .active{
+.dropdown_menu .active {
     color: var(--cor-quarternaria);
 }
 
-.dorpdown_menu .login{
+.dorpdown_menu .login {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -147,16 +147,19 @@ header{
 /*
     USUARIO
 */
-.bio{
+.bio {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    color: var(--cor-quintenaria);
-    font-size: 1.5rem;
     text-align: center;
     border-bottom: var(--cor-quintenaria) 1px solid;
     padding-bottom: 10px;
     margin-bottom: 20px;
+}
+
+.bio a {
+    color: var(--cor-quintenaria);
+    font-size: 1.5rem;
 }
 
 .identificacoes {
@@ -243,12 +246,12 @@ LOGOFF
     margin-left: 20px;
 }
 
-.materias h1{
+.materias h1 {
     margin-top: 20px;
     margin-bottom: 5px;
 }
 
-.materialecionada{
+.materialecionada {
     margin: 20px;
     padding: 5px;
     display: inline-block;
@@ -256,7 +259,7 @@ LOGOFF
 }
 
 /* NÍVEIS */
-.nivellecionado{
+.nivellecionado {
     margin: 20px;
     padding: 5px;
     display: inline-block;
@@ -281,51 +284,111 @@ div.atribuicao h1 {
     position: relative;
 }
 
-.container .ensino{
-   position: absolute;
-   height: 100%;
-   width: 76%;
-   background-color: var(--cor-primaria);
+.container .ensino {
+    position: absolute;
+    height: 100%;
+    width: 76%;
+    background-color: var(--cor-primaria);
 }
 
-.container .dominio{
-   position: absolute;
-   height: 100%;
-   width: 98%;
-   background-color: var(--cor-primaria);
+.container .dominio {
+    position: absolute;
+    height: 100%;
+    width: 98%;
+    background-color: var(--cor-primaria);
 }
 
 /* ANIMAÇÃO EXCLUIR MATERIA */
+.mensagemexcluirmateria {
+    display: none;
+}
+
 .materialecionada {
     cursor: pointer;
     position: relative;
-  }
-  
-  .materialecionada span {
+}
+
+.materialecionada span {
     position: relative;
     z-index: 1;
-  }
-  
-  .materialecionada:hover span {
+}
+
+.materialecionada:hover span {
     display: none;
-  }
-  
-  .materialecionada:hover::before {
+}
+
+.materialecionada:hover::before {
     content: "excluir";
     position: absolute;
     top: 0px;
     left: 5px;
     animation: slideUp 0.3s;
-  }
-  
-  @keyframes slideUp {
+}
+
+@keyframes slideUp {
     from {
-      top: 10px;
-      opacity: 0;
+        top: 10px;
+        opacity: 0;
     }
+
     to {
-      top: 0px;
-      opacity: 1;
+        top: 0px;
+        opacity: 1;
     }
-  }
-  
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 720px) {
+
+    .navbar .links,
+    .navbar .login {
+        display: none;
+    }
+
+    .toggle_btn {
+        display: block;
+    }
+
+    .dropdown_menu {
+        display: block;
+    }
+
+    .name {
+        font-size: 7vmin;
+    }
+
+    .email {
+        font-size: 7vmin;
+    }
+}
+
+@media (max-width: 576px) {
+    .dropdown_menu {
+        left: 2rem;
+        width: unset;
+    }
+
+    .whitebold {
+        display: none;
+    }
+
+    .name {
+        font-size: 8vmin;
+    }
+
+    .email {
+        font-size: 8vmin;
+    }
+
+    footer {
+        display: inline;
+    }
+
+    footer div {
+        margin-bottom: 30px;
+    }
+
+    .mensagemexcluirmateria {
+        display: inline;
+    }
+}
