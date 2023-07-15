@@ -232,7 +232,6 @@ function EventoExcluirMateriasLecionadas () {
     materiasLecionadas.addEventListener("mouseover", function (event) {
         if (event.target.classList.contains("materialecionada")) {
             const originalText = event.target.innerHTML;
-            event.target.innerHTML = "...........";
             event.target.addEventListener("mouseout", function () {
                 event.target.innerHTML = originalText;
             });

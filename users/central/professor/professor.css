@@ -312,27 +312,28 @@ div.atribuicao h1 {
     position: relative;
     z-index: 1;
 }
-
 .materialecionada:hover span {
     display: none;
 }
 
 .materialecionada:hover::before {
+    width: 100%;
+    background-color: white;
     content: "excluir";
     position: absolute;
-    top: 0px;
-    left: 5px;
+    top: 5px;
+    left: 0px;
     animation: slideUp 0.3s;
 }
 
 @keyframes slideUp {
     from {
-        top: 10px;
+        top: 20px;
         opacity: 0;
     }
 
     to {
-        top: 0px;
+        top: 5px;
         opacity: 1;
     }
 }
