@@ -260,6 +260,7 @@ LOGOFF
 
 /* NÍVEIS */
 .nivellecionado {
+    cursor: pointer;
     margin: 20px;
     padding: 5px;
     display: inline-block;
